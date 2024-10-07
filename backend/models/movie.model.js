@@ -1,6 +1,11 @@
 import mongoose from "mongoose";
 
 const reviewSchema = new mongoose.Schema({
+    userId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+        required: true
+    },
     userName: { type: String, required: true },
     userImage: { type: String, required: true },
     rating: { type: Number, required: true },
@@ -52,7 +57,7 @@ const movieSchema = new mongoose.Schema({
     },
     rate: {
         type: Number,
-        required: true
+        default: 0
     },
     numOfReviews: {
         type: Number,

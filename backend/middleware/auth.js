@@ -15,9 +15,14 @@ export const protect = asyncHandler(async (req, res, next) => {
     ) {
         try {
             const token = req.headers.authorization.split(" ")[1];
-            const decoded = jwt.verify(token, process.env.JWT_SECRET);
-            req.user = await User.findById(decoded.id).select("-password");
-            next();
+            try {
+                const decoded = jwt.verify(token, process.env.JWT_SECRET);
+                req.user = await User.findById(decoded.id).select("-password");
+                next();
+            } catch (error) {
+                res.status(401);
+                throw new Error("Token has expired");
+            }
         } catch (error) {
             console.log("Error during protecting user: " + error.message);
             res.status(401);
