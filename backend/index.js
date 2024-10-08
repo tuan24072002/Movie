@@ -6,6 +6,7 @@ import { errorHandler } from "./middleware/error.middleware.js";
 import userRouter from "./routers/user.route.js";
 import movieRouter from "./routers/movie.route.js";
 import categoryRouter from "./routers/category.route.js";
+import uploadRouter from "./controllers/upload.controller.js";
 import path from "path";
 
 const app = express();
@@ -24,6 +25,7 @@ app.use("/backend/uploads", express.static(`${__dirname}/backend/uploads`))
 app.use("/api/users", userRouter)
 app.use("/api/movies", movieRouter)
 app.use("/api/categories", categoryRouter)
+app.use("/api/uploads", uploadRouter)
 app.use(errorHandler);
 connectDB();
 const port = process.env.PORT || 5000;
