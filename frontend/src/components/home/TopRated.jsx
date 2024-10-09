@@ -2,7 +2,7 @@ import { useState } from "react"
 import Titles from "../Titles"
 import { BsBookmarkStarFill, BsCaretLeftFill, BsCaretRightFill } from "react-icons/bs"
 import { Swiper, SwiperSlide } from "swiper/react"
-import { Autoplay, EffectCoverflow, Navigation, Pagination } from "swiper/modules"
+import { Autoplay, EffectCoverflow, Navigation } from "swiper/modules"
 import { MoviesData } from "../../data/MovieData"
 import { FaHeart } from "react-icons/fa"
 import { Link } from "react-router-dom"
@@ -26,21 +26,38 @@ const TopRated = () => {
                         modifier: 1,
                         slideShadows: true,
                     }}
-                    // pagination
                     navigation={{ nextEl, prevEl }}
-                    slidesPerView={3}
-                    spaceBetween={40}
+                    // slidesPerView={1}
+                    // spaceBetween={40}
                     autoplay
-                    speed={1000}
+                    speed={300}
                     loop
-                    modules={[Navigation, Autoplay, EffectCoverflow, Pagination]}
+                    modules={[Navigation, Autoplay, EffectCoverflow]}
+                    breakpoints={{
+                        1280: {
+                            slidesPerView: 5,
+                            spaceBetween: 60
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                            spaceBetween: 40
+                        },
+                        640: {
+                            slidesPerView: 2,
+                            spaceBetween: 20
+                        },
+                        475: {
+                            slidesPerView: 1,
+                            spaceBetween: 40
+                        }
+                    }}
                 >
                     {
                         MoviesData.map((movie, index) => (
                             <SwiperSlide key={index}>
-                                <div className="p-4 h-rate border-border bg-dry rounded-lg overflow-hidden">
+                                <div className="p-4 h-rate hovered border-border bg-dry rounded-lg overflow-hidden">
                                     <img src={`/images/movies/${movie.titleImage}`} alt={movie.name} className="w-full h-full object-cover rounded-lg" />
-                                    <div className="px-4 gap-6 text-center absolute bg-black bg-opacity-50 top-0 left-0 right-0 bottom-0 flex-cols">
+                                    <div className="px-4 gap-6 hoveres text-center absolute bg-black bg-opacity-50 top-0 left-0 right-0 bottom-0">
                                         <button className="size-12 flex-cols transitions hover:bg-submain rounded-full bg-white bg-opacity-30 text-white">
                                             <FaHeart />
                                         </button>
@@ -57,10 +74,10 @@ const TopRated = () => {
                     }
                 </Swiper>
                 <div className="w-full px-1 flex-rows gap-6 pt-12">
-                    <button className="px-2 py-2 bg-submain rounded-md hover:bg-black border-2 border-transparent hover:border-border transitions" ref={(e) => setPrevEl(e)}>
+                    <button className="px-2 py-2 bg-submain rounded-md hover:bg-dry border-2 border-transparent hover:border-border transitions" ref={(e) => setPrevEl(e)}>
                         <BsCaretLeftFill />
                     </button>
-                    <button className="px-2 py-2 bg-submain rounded-md hover:bg-black border-2 border-transparent hover:border-border transitions" ref={(e) => setNextEl(e)}>
+                    <button className="px-2 py-2 bg-submain rounded-md hover:bg-dry border-2 border-transparent hover:border-border transitions" ref={(e) => setNextEl(e)}>
                         <BsCaretRightFill />
                     </button>
                 </div>
