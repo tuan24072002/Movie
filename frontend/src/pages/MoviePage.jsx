@@ -1,7 +1,10 @@
+import Layout from "@/layout/Layout"
 
 const MoviePage = () => {
     return (
-        <div>MoviePage</div>
+        <Layout>
+            <div>MoviePage</div>
+        </Layout>
     )
 }
 

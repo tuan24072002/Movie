@@ -1,7 +1,10 @@
+import Layout from "@/layout/Layout"
 
 const LoginPage = () => {
     return (
-        <div>LoginPage</div>
+        <Layout>
+            <div>LoginPage</div>
+        </Layout>
     )
 }
 

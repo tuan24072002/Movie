@@ -1,6 +1,10 @@
+import Layout from "@/layout/Layout"
+
 const AboutPage = () => {
     return (
-        <div>AboutPage</div>
+        <Layout>
+            <div>AboutPage</div>
+        </Layout>
     )
 }
 

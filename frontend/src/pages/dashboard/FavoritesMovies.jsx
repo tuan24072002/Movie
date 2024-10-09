@@ -1,7 +1,10 @@
+import Layout from "@/layout/Layout"
 
 const FavoritesMovies = () => {
     return (
-        <div>FavoritesMovies</div>
+        <Layout>
+            <div>FavoritesMovies</div>
+        </Layout>
     )
 }
 
