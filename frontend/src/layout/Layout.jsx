@@ -4,11 +4,9 @@ import NavBar from "./navbar/NavBar"
 const Layout = ({ children }) => {
     return (
         <>
-            <div className="bg-main text-white flex flex-col h-screen">
+            <div className="bg-main text-white">
                 <NavBar />
-                <div className="flex-1">
-                    {children}
-                </div>
+                {children}
                 <Footer />
             </div>
         </>
