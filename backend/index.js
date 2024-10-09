@@ -17,9 +17,9 @@ app.use(cors({
 }));
 app.use(express.json());
 
-app.get("/", (req, res) => {
-    res.send(req.headers?.authorization?.split(" ")[1] || "Hello world");
-});
+// app.get("/", (req, res) => {
+//     res.send(req.headers?.authorization?.split(" ")[1] || "Hello world");
+// });
 const __dirname = path.resolve();
 
 app.use("/backend/uploads", express.static(`${__dirname}/backend/uploads`))
