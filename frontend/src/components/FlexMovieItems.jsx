@@ -1,5 +1,4 @@
-import { FaRegCalendarAlt } from "react-icons/fa"
-import { BiTime } from "react-icons/bi"
+import { Calendar, Clock } from 'lucide-react';
 
 const FlexMovieItems = ({ movie }) => {
     return (
@@ -8,11 +7,11 @@ const FlexMovieItems = ({ movie }) => {
                 <span className="text-sm font-medium">{movie.category}</span>
             </div>
             <div className="flex items-center gap-2">
-                <FaRegCalendarAlt className="size-3 text-submain" />
+                <Calendar className="size-3 text-submain" />
                 <span className="text-sm font-medium">{movie.year}</span>
             </div>
             <div className="flex items-center gap-2">
-                <BiTime className="size-3 text-submain" />
+                <Clock className="size-3 text-submain" />
                 <span className="text-sm font-medium">{movie.time}</span>
             </div>
         </>

@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react"
-import { Autoplay } from "swiper/modules"
+import { Autoplay, Pagination } from "swiper/modules"
 import { MoviesData } from "@/data/MovieData"
 import FlexMovieItems from "../FlexMovieItems"
 import { Link } from "react-router-dom";
@@ -11,8 +11,12 @@ const banner = () => {
                 direction="vertical"
                 slidesPerView={1}
                 loop
+                grabCursor
+                pagination={{
+                    clickable: true,
+                }}
                 speed={1000}
-                modules={[Autoplay]}
+                modules={[Autoplay, Pagination]}
                 autoplay={{ delay: 3000, disableOnInteraction: false }}
                 className="w-full xl:h-96 bg-dry lg:h-64 h-48"
             >

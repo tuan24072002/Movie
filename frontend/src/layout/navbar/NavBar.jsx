@@ -1,10 +1,26 @@
 import { Link, NavLink } from "react-router-dom";
 import { FaHeart, FaSearch } from "react-icons/fa";
 import { CgUser } from "react-icons/cg";
-const handleSubmitSearch = async (e) => {
-    e.preventDefault();
-}
+import OpenAI from "openai";
+import { useState } from "react";
+
 const NavBar = () => {
+    const [search, setSearch] = useState("")
+    const handleSubmitSearch = async (e) => {
+        e.preventDefault();
+        const openai = new OpenAI
+        const completion = await openai.chat.completions.create({
+            model: "gpt-4o-mini",
+            messages: [
+                { role: "system", content: "You are a helpful assistant." },
+                {
+                    role: "user",
+                    content: "Write a haiku about recursion in programming.",
+                },
+            ],
+        });
+        console.log(completion.choices[0].message);
+    }
     return (
         <>
             <div className="bg-main shadow-md sticky top-0 z-20">
@@ -23,7 +39,9 @@ const NavBar = () => {
                                 placeholder="Search movie from here..."
                                 name="search"
                                 id="search"
-                                className="font-medium placeholder:text-border text-sm w-11/12 h-12 bg-transparent border-none px-4 text-black"
+                                value={search}
+                                onChange={(e) => setSearch(e.target.value)}
+                                className="font-medium placeholder:text-slate-600 text-sm w-11/12 h-12 bg-transparent border-none px-4 text-black"
                             />
                             <button type="submit" className="bg-submain w-12 flex-cols h-12 rounded text-white">
                                 <FaSearch />
