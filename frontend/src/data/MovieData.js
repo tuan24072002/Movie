@@ -1,5 +1,6 @@
 export const MoviesData = [
     {
+        id: 1,
         name: "Army Of The Dead",
         desc: "The army of the dead, a group of mercenaries sent to end the war in Vietnam, faces overwhelming odds in their efforts to save their nation.",
         titleImage: "1a.jpg",
@@ -12,6 +13,7 @@ export const MoviesData = [
         rate: 3,
     },
     {
+        id: 2,
         name: "The Conjuring",
         desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         titleImage: "22.jpg",
@@ -24,6 +26,7 @@ export const MoviesData = [
         rate: 5,
     },
     {
+        id: 3,
         name: "My Favorite Person",
         desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         titleImage: "33.jpg",
@@ -36,6 +39,7 @@ export const MoviesData = [
         rate: 2,
     },
     {
+        id: 4,
         name: "Lets Be a Crops",
         desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         titleImage: "44.jpg",
@@ -48,6 +52,7 @@ export const MoviesData = [
         rate: 1,
     },
     {
+        id: 5,
         name: "Below her mouth",
         desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         titleImage: "55.jpg",
@@ -60,6 +65,7 @@ export const MoviesData = [
         rate: 5,
     },
     {
+        id: 6,
         name: "Legend of the seeker",
         desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         titleImage: "66.jpg",
@@ -72,6 +78,7 @@ export const MoviesData = [
         rate: 4,
     },
     {
+        id: 7,
         name: "Scarlet Heart",
         desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         titleImage: "77.jpg",
@@ -84,6 +91,7 @@ export const MoviesData = [
         rate: 0,
     },
     {
+        id: 8,
         name: "The Last Dance",
         desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         titleImage: "88.jpg",
@@ -96,6 +104,7 @@ export const MoviesData = [
         rate: 0,
     },
     {
+        id: 9,
         name: "Titanic",
         desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         titleImage: "99.jpg",
@@ -108,6 +117,7 @@ export const MoviesData = [
         rate: 4.5,
     },
     {
+        id: 10,
         name: "About Time of the Dead",
         desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         titleImage: "101.jpg",
@@ -120,6 +130,7 @@ export const MoviesData = [
         rate: 0,
     },
     {
+        id: 11,
         name: "Game of Thrones",
         desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         titleImage: "111.jpg",
