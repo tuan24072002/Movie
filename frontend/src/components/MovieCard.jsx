@@ -6,7 +6,7 @@ const MovieCard = ({ movie }) => {
     return (
         <>
             <div className="border border-border p-1 hover:scale-95 transitions relative rounded overflow-hidden">
-                <Link to={`/movie/${movie.name}`} className="w-full">
+                <Link to={`/movie/${movie.id}`} className="w-full">
                     <img src={`/images/movies/${movie.image}`} alt={movie.name} className="w-full h-64 object-cover" />
                 </Link>
                 <div className="absolute flex-btn bottom-0 right-0 left-0 bg-main bg-opacity-60 text-white px-4 py-3">

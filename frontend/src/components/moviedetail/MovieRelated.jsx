@@ -4,7 +4,7 @@ import { MoviesData } from "@/data/MovieData"
 import MovieCard from "@/components/MovieCard"
 
 const MovieRelated = ({ movie }) => {
-    const relatedMovies = MoviesData.filter(i => (i.category === movie.category) && (i.id !== movie.id))
+    const relatedMovies = MoviesData.filter(i => (i?.category === movie?.category) && (i.id !== movie?.id))
     return (
         relatedMovies.length > 0 && <div className="my-12">
             <Titles title="Related Movies" Icon={BsCollectionFill} />

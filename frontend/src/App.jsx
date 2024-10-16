@@ -6,7 +6,8 @@ import NotFoundPage from "@/pages/NotFoundPage"
 import MoviePage from "@/pages/MoviePage"
 import LoginPage from "@/pages/LoginPage"
 import FavoritesMovies from "@/pages/dashboard/FavoritesMovies"
-import MovieDetailPage from "./pages/MovieDetailPage"
+import MovieDetailPage from "@/pages/MovieDetailPage"
+import WatchPage from "@/pages/WatchPage"
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route path="/contact-us" element={<ContactPage />} />
       <Route path="/movies" element={<MoviePage />} />
       <Route path="/movie/:id" element={<MovieDetailPage />} />
+      <Route path="/watch/:id" element={<WatchPage />} />
       <Route path="/favorite" element={<FavoritesMovies />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="*" element={<NotFoundPage />} />

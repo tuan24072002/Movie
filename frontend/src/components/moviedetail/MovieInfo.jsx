@@ -65,7 +65,7 @@ const MovieInfo = ({ movie }) => {
                                 </div>
                                 {/* Watch */}
                                 <div className="sm:col-span-2 col-span-3 flex justify-end font-medium text-sm">
-                                    <Link to={`/watch/${movie?.name}`} className="bg-dry hover:bg-submain transitions border-2 border-submain rounded-full flex-rows gap-4 w-full py-3 group">
+                                    <Link to={`/watch/${movie?.id}`} className="bg-dry hover:bg-submain transitions border-2 border-submain rounded-full flex-rows gap-4 w-full py-3 group">
                                         <Play className="size-4 fill-submain text-submain group-hover:fill-white group-hover:text-white transitions" /> Watch
                                     </Link>
                                 </div>

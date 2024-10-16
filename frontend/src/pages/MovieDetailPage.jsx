@@ -1,16 +1,16 @@
+import { useEffect } from "react";
 import Layout from "@/layout/Layout"
 import { useNavigate, useParams } from "react-router-dom"
 import { MoviesData } from "@/data/MovieData"
 import MovieInfo from "@/components/moviedetail/MovieInfo";
 import MovieCasts from "@/components/moviedetail/MovieCasts";
 import MovieRates from "@/components/moviedetail/MovieRates";
-import { useEffect } from "react";
-import MovieRelated from "../components/moviedetail/MovieRelated";
+import MovieRelated from "@/components/moviedetail/MovieRelated";
 
 const MovieDetailPage = () => {
     const { id } = useParams();
     const navigate = useNavigate();
-    const movie = MoviesData.find(i => i?.name === id);
+    const movie = MoviesData.find(i => i.id === Number(id));
 
     useEffect(() => {
         if (!movie) {
