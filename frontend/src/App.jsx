@@ -8,6 +8,7 @@ import LoginPage from "@/pages/LoginPage"
 import FavoritesMovies from "@/pages/dashboard/FavoritesMovies"
 import MovieDetailPage from "@/pages/MovieDetailPage"
 import WatchPage from "@/pages/WatchPage"
+import SignupPage from "./pages/SignupPage"
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Route path="/watch/:id" element={<WatchPage />} />
       <Route path="/favorite" element={<FavoritesMovies />} />
       <Route path="/login" element={<LoginPage />} />
+      <Route path="/register" element={<SignupPage />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   )
