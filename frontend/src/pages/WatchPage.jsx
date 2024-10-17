@@ -1,31 +1,49 @@
 import Layout from "@/layout/Layout"
-import { Link, useParams } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
 import { MoviesData } from "@/data/MovieData"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { FaArrowLeft, FaHeart, FaCloudDownloadAlt, FaPlay } from "react-icons/fa"
 import { TbFocus2 } from "react-icons/tb"
 import { MdFullscreen } from "react-icons/md";
 const WatchPage = () => {
     const { id } = useParams();
+    const navigate = useNavigate();
     const movie = MoviesData.find(i => i.id === Number(id));
     const [play, setPlay] = useState(false);
-    const [focus, setFocus] = useState(true);
+    const [focus, setFocus] = useState(false);
     const handleFullscreen = () => {
         const elem = document.documentElement;
-        if (elem.requestFullscreen) {
-            elem.requestFullscreen();
-        } else if (elem.mozRequestFullScreen) {
-            elem.mozRequestFullScreen();
-        } else if (elem.webkitRequestFullscreen) {
-            elem.webkitRequestFullscreen();
-        } else if (elem.msRequestFullscreen) {
-            elem.msRequestFullscreen();
-        }
-
-        if (document.fullscreenElement) {
-            document.exitFullscreen();
+        if (!document.fullscreenElement &&
+            !document.mozFullScreenElement &&
+            !document.webkitFullscreenElement &&
+            !document.msFullscreenElement) {
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.mozRequestFullScreen) {
+                elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullscreen) {
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) {
+                elem.msRequestFullscreen();
+            }
+        } else {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            }
         }
     };
+    useEffect(() => {
+        if (!movie) {
+            navigate("/")
+        }
+    }, [movie, navigate])
+
     return (
         <>
             <Layout>
@@ -66,10 +84,10 @@ const WatchPage = () => {
                         <div className="mt-4 flex items-center justify-end gap-4">
                             <p className="text-text">Modes:</p>
                             <div className="gap-4 flex items-center">
-                                <button onClick={handleFullscreen} className="px-3 py-3 rounded-lg border border-border hover:bg-border transitions">
+                                <button onClick={handleFullscreen} className={`px-3 py-3 rounded-lg border border-border hover:bg-border transitions md:block hidden`}>
                                     <MdFullscreen className="size-6" />
                                 </button>
-                                <button onClick={() => setFocus(prev => !prev)} className="px-3 py-3 rounded-lg border border-border hover:bg-border transitions">
+                                <button onClick={() => setFocus(prev => !prev)} className={`px-3 py-3 rounded-lg border border-border hover:bg-border transitions`}>
                                     <TbFocus2 className="size-6" />
                                 </button>
                             </div>
