@@ -1,7 +1,7 @@
-import { Eye, EyeOff } from "lucide-react"
+import { Eye, EyeOff, CloudUpload } from "lucide-react"
 import Stars from "./Stars"
 import { useState } from "react"
-
+import { useDropzone } from "react-dropzone"
 
 export const Message = ({ label, placeholder }) => {
     return (
@@ -54,5 +54,29 @@ export const Input = ({ label, placeholder, type, bg }) => {
                 }
             </div>
         </div>
+    )
+}
+
+export const Upload = () => {
+    const { getRootProps, getInputProps } = useDropzone({
+        multiple: false,
+        maxSize: 100000,
+        onDrop: (acceptedFiles) => {
+            alert(acceptedFiles[0].name)
+        }
+    })
+    return (
+        <label htmlFor="file" className="w-full text-center">
+            <div
+                {...getRootProps()}
+                className="px-6 py-8 border-2 border-border border-dashed bg-main rounded-md cursor-pointer">
+                <input {...getInputProps} hidden id="file" />
+                <span className="mx-auto flex-cols text-submain">
+                    <CloudUpload className="size-8" />
+                </span>
+                <p className="text-sm mt-2">Drag your image here</p>
+                <em className="text-xs text-border mt-2">(only .jpg and .png files will be accepted)</em>
+            </div>
+        </label>
     )
 }

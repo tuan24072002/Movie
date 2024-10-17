@@ -1,6 +1,14 @@
+import SideBar from "../SideBar"
+
 const AddMovie = () => {
     return (
-        <div>AddMovie</div>
+        <SideBar>
+            <div className="flex flex-col gap-6">
+                <h2 className="text-xl font-bold">
+                    Profile
+                </h2>
+            </div>
+        </SideBar>
     )
 }
 
