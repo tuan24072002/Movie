@@ -1,4 +1,4 @@
-import CustomTable from "@/components/CustomTable"
+import TableMovie from "@/components/TableMovie"
 import SideBar from "./SideBar"
 import { MoviesData } from "@/data/MovieData"
 import { Trash2 } from "lucide-react"
@@ -16,7 +16,7 @@ const FavoritesMovies = () => {
                         Remove <Trash2 className="text-submain group-hover:text-white transitions" />
                     </button>
                 </div>
-                <CustomTable data={MoviesData} admin={false} />
+                <TableMovie data={MoviesData} admin={false} />
             </div>
         </SideBar>
     )

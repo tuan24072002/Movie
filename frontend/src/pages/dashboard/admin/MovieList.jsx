@@ -1,6 +1,6 @@
 import { Trash2 } from "lucide-react"
 import SideBar from "../SideBar"
-import CustomTable from "@/components/CustomTable"
+import TableMovie from "@/components/TableMovie"
 import { MoviesData } from "@/data/MovieData"
 const MovieList = () => {
     return (
@@ -14,7 +14,7 @@ const MovieList = () => {
                         Remove <Trash2 className="text-submain group-hover:text-white transitions" />
                     </button>
                 </div>
-                <CustomTable data={MoviesData} admin={true} />
+                <TableMovie data={MoviesData} admin={true} />
             </div>
         </SideBar>
     )

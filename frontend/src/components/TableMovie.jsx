@@ -45,7 +45,7 @@ const Rows = (movie, index, admin) => {
     )
 }
 
-const CustomTable = ({ data, admin }) => {
+const TableMovie = ({ data, admin }) => {
     return (
         <ScrollArea className='overflow-hidden relative w-full'>
             <table className="w-full table-auto border border-border divide-y divide-border">
@@ -85,4 +85,4 @@ const CustomTable = ({ data, admin }) => {
     )
 }
 
-export default CustomTable
+export default TableMovie

@@ -1,6 +1,6 @@
 import { LayoutDashboard, List, Users } from "lucide-react"
 import SideBar from "../SideBar"
-import CustomTable from "@/components/CustomTable"
+import TableMovie from "@/components/TableMovie"
 import { MoviesData } from "@/data/MovieData"
 
 const Dashboard = () => {
@@ -45,7 +45,7 @@ const Dashboard = () => {
                 }
             </div>
             <h3 className="font-medium my-6 text-border">Recent Movies</h3>
-            <CustomTable data={MoviesData.slice(0, 5)} admin={true} />
+            <TableMovie data={MoviesData.slice(0, 5)} admin={true} />
         </SideBar>
     )
 }
