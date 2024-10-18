@@ -5,10 +5,11 @@ import "swiper/css"
 import "swiper/css/navigation"
 import "swiper/css/pagination"
 import { BrowserRouter } from 'react-router-dom'
-
+import { Toaster } from "@/components/ui/toaster"
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <App />
+    <Toaster />
   </BrowserRouter>,
 )

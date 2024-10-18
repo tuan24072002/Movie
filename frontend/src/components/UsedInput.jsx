@@ -65,18 +65,34 @@ export const Upload = () => {
             alert(acceptedFiles[0].name)
         }
     })
+    const [filePreview, setFilePreview] = useState(null)
+    const handlefileChange = (e) => {
+        const file = e.target.files[0];
+        const reader = new FileReader();
+        reader.readAsDataURL(file)
+        reader.onload = () => {
+            setFilePreview(reader.result)
+        }
+    }
     return (
-        <label htmlFor="file" className="w-full text-center">
-            <div
-                {...getRootProps()}
-                className="px-6 py-8 border-2 border-border border-dashed bg-main rounded-md cursor-pointer">
-                <input {...getInputProps} hidden id="file" />
-                <span className="mx-auto flex-cols text-submain">
-                    <CloudUpload className="size-8" />
-                </span>
-                <p className="text-sm mt-2">Drag your image here</p>
-                <em className="text-xs text-border mt-2">(only .jpg and .png files will be accepted)</em>
+        <div className="md:grid flex flex-col grid-cols-10 gap-4">
+            <label htmlFor="file" className="w-full text-center col-span-8">
+                <div
+                    {...getRootProps()}
+                    className="px-6 py-8 border-2 border-border border-dashed bg-main rounded-md cursor-pointer">
+                    <input {...getInputProps} hidden id="file" type="file" onChange={(e) => handlefileChange(e)} />
+                    <span className="mx-auto flex-cols text-submain">
+                        <CloudUpload className="size-8" />
+                    </span>
+                    <p className="text-sm mt-2">Drag your image here</p>
+                    <em className="text-xs text-border mt-2">(only .jpg and .png files will be accepted)</em>
+                </div>
+            </label>
+            <div className="px-6 py-8 col-span-2 border-2 md:h-full max-h-[152px] border-border border-dashed bg-main rounded-md flex-rows">
+                {
+                    filePreview && <img src={filePreview} alt="Avatar" className="w-full md:object-cover object-contain" />
+                }
             </div>
-        </label>
+        </div>
     )
 }
