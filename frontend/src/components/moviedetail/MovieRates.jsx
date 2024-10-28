@@ -1,6 +1,6 @@
 import { BsBookmarkStarFill } from "react-icons/bs"
 import Titles from "../Titles"
-import { Message, SelectRate } from "../UsedInput"
+import { Message, SelectBox } from "../UsedInput"
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { ScrollArea } from "@/components/ui/scroll-area"
@@ -51,7 +51,7 @@ const MovieRates = ({ movie }) => {
                     <p className="text-sm leading-7 font-medium text-border">
                         Write a review for this movie. It will be posted on this page.
                     </p>
-                    <SelectRate label="Select rating" options={Ratings} onChange={(e) => setRating(e.target.value)} rating={rating} />
+                    <SelectBox label="Select rating" options={Ratings} onChange={(e) => setRating(e.target.value)} rating={rating} />
                     <Message label={"Message"} placeholder={"Make it short and sweet ..."} />
                     <motion.button
                         whileHover={{ scale: 1.05 }}

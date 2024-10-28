@@ -1,16 +1,15 @@
-import { Upload } from "@/components/UsedInput"
+import { UploadImage, Input } from "@/components/UsedInput"
 import SideBar from "./SideBar"
-import { Input } from "../../components/UsedInput"
 import { useToast } from "@/hooks/use-toast"
+import { useState } from "react"
 
 const Profile = () => {
     const { toast } = useToast();
-
+    const [avatarPreview, setAvatarPreview] = useState("")
     const handleDeleteAccount = () => {
         toast({
             variant: "destructive",
             title: "Deleted successfully !",
-            // duration: 3
         });
     }
     const handleUpdateAccount = () => {
@@ -22,7 +21,7 @@ const Profile = () => {
                 <h2 className="text-xl font-bold">
                     Profile
                 </h2>
-                <Upload />
+                <UploadImage filePreview={avatarPreview} setFilePreview={setAvatarPreview} />
                 <Input label="Full Name" placeholder="Movie React Tailwind" type="text" bg="main" />
                 <Input label="Email" placeholder="abc@gmail.com" type="text" bg="main" />
                 <div className="flex gap-6 flex-wrap flex-col-reverse sm:flex-row justify-between items-center my-4">
